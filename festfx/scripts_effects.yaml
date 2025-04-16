@@ -1,0 +1,202 @@
+#effect - effect_load_and_post - effect_launch - effect_configuration - effect_popup - effect_color
+script:
+
+          
+  festfx_effect:
+    #fields: effect, action
+    sequence:
+      - choose:
+          - conditions:
+              - condition: template
+                value_template: "{{ action == 'show' }}"
+            sequence:
+              - service: script.festfx_effect_load_and_post
+                data:
+                  action: show
+                  effect: "{{ effect }}"
+          - conditions:
+              - condition: template
+                value_template: "{{ action == 'post' }}"
+            sequence:
+              - choose:
+                  - conditions:
+                      - condition: state
+                        entity_id: input_boolean.festfx_v_settings
+                        state: "off"
+                    sequence:
+                      - service: script.festfx_effect_load_and_post
+                        data:
+                          action: post
+                          effect: "{{ effect }}"
+                default:
+                  - service: script.festfx_effect_load_and_post
+                    data:
+                      action: show
+                      effect: "{{ effect }}"
+  
+  
+  festfx_effect_load_and_post:
+    mode: parallel
+    variables:
+      effect_variables: { bar: ["gradient","color_step","ease_method","mode","beat_skip","skip_every"], multiBar: ["gradient","color_step","ease_method","mode2"], strobe: ["gradient","beat_decay","strobe_decay","strobe_pattern","strobe_frequency"], blade_power_plus: ["gradient","decay","gradient_roll","multiplier","fix_hues","frequency_range"], energy: ["color_lows","color_mids","color_high","sensitivity","color_cycler","mixing_mode"], magnitude: ["gradient","gradient_roll","frequency_range"], pitchSpectrum: ["gradient","gradient_roll","fade_rate","responsiveness"], power: ["gradient","gradient_roll","bass_decay_rate","sparks_color","sparks_decay_rate"], rain: ["color_lows","color_mids","color_high","lows_sensitivity","mids_sensitivity","high_sensitivity","pulse_strip","raindrop_animation"], scan: ["gradient","color_scan","speed","multiplier","use_grad","scan_width","color_intensity","bounce","frequency_range"], scroll: ["color_lows","color_mids","color_high","speed","decay","threshold"], spectrum: ["rgb_mix"], wavelength: ["gradient","gradient_roll"], block_reflections: ["gradient","gradient_roll","speed","reactivity","decay","fix_hues"], crawler: ["gradient","gradient_roll","speed","reactivity","sway","chop","stretch","fix_hues"], energy2: ["gradient","gradient_roll","speed","reactivity","fix_hues"], fire: ["gradient","gradient_roll","intensity","speed","color_shift","fix_hues"], glitch: ["gradient","gradient_roll","speed","reactivity","saturation_threshold","fix_hues"], lava_lamp: ["gradient","gradient_roll","speed","contrast","reactivity","fix_hues"], marching: ["gradient","gradient_roll","speed","reactivity","fix_hues"], melt: ["gradient","gradient_roll","speed","reactivity","fix_hues"], melt_and_sparkle: ["gradient","gradient_roll","speed","reactivity","fix_hues"], water: ["gradient","gradient_roll","speed","fix_hues"], bands: ["gradient","band_count","gradient_roll","align"], bands_matrix: ["gradient","band_count","gradient_roll","flip_gradient"], blocks: ["gradient","block_count","gradient_roll"], equalizer: ["gradient","gradient_repeat","gradient_roll","align"], rainbow: ["speed"] }
+    sequence:
+      - service: input_boolean.turn_off
+        target:
+          entity_id: input_boolean.festfx_v_sync
+      - choose:
+          - conditions:
+              - condition: template
+                value_template: "{{ action == 'post' or action == 'preview' }}"
+            sequence:
+              - service: "{% if action == 'post' %}rest_command.festfx_live{% else %}rest_command.festfx_preview{% endif %}"
+                data:
+                  type: "{{ effect }}"
+                  active: false
+                  config_data: 
+                    mirror: "{{ is_state('input_boolean.festfx_v_mirror', 'on') }}"
+                    flip: "{{ is_state('input_boolean.festfx_v_flip', 'on') }}"
+                    blur: "{{ states('input_number.festfx_v_blur') | float(0) | round(2) }}"
+                    brightness: "{{ states('input_number.festfx_v_brightness') | float(0) | round(2) }}"
+                    background_brightness: "{{ states('input_number.festfx_v_background_brightness') | float(0) | round(2) }}"
+                    background_color: "{{ states('input_text.festfx_v_background_color') }}"
+                    gradient: "{{ states('input_text.festfx_v_gradient') }}"
+                    color_step: "{{ (states('input_number.festfx_v_color_step') | float(0)) | round(2) }}"
+                    ease_method: "{{ states('input_select.festfx_v_ease_method') }}"
+                    mode: "{{ states('input_select.festfx_v_mode') if effect == 'bar' else states('input_select.festfx_v_mode2') }}"
+                    beat_skip: "{{ states('input_select.festfx_v_beat_skip') }}"
+                    skip_every: "{{ states('input_select.festfx_v_skip_every') }}"
+                    beat_decay: "{{ states('input_number.festfx_v_beat_decay') | float(0) | round(2) }}"
+                    strobe_decay: "{{ states('input_number.festfx_v_strobe_decay') | float(0) | round(2) }}"
+                    strobe_pattern: "{{ states('input_select.festfx_v_strobe_pattern') }}"
+                    strobe_frequency: "{{ states('input_select.festfx_v_strobe_frequency') }}"
+                    decay: "{{ (states('input_number.festfx_v_decay') | float(0) * 1 if effect == 'blade_power_plus' else states('input_number.festfx_v_decay') | float(0) * 0.2 + 0.8 if effect == 'scroll' else states('input_number.festfx_v_decay') | float(0)) | round(2) }}"
+                    gradient_roll: "{{ states('input_number.festfx_v_gradient_roll') | float(0) | round(2) }}"
+                    multiplier: "{{ (states('input_number.festfx_v_multiplier') | float(0) * (1 if effect == 'blade_power_plus' else 5 if effect == 'scan' else 1)) | round(2) }}"
+                    fix_hues: "{{ is_state('input_boolean.festfx_v_fix_hues', 'on') }}"
+                    frequency_range: "{{ states('input_select.festfx_v_frequency_range') }}"
+                    color_lows: "{{ states('input_text.festfx_v_lows') }}"
+                    color_mids: "{{ states('input_text.festfx_v_mids') }}"
+                    color_high: "{{ states('input_text.festfx_v_high') }}"
+                    lows_color: "{{ states('input_text.festfx_v_lows') }}"
+                    mids_color: "{{ states('input_text.festfx_v_mids') }}"
+                    high_color: "{{ states('input_text.festfx_v_high') }}"
+                    sensitivity: "{{ states('input_number.festfx_v_sensitivity') | float(0) | round(2) }}"
+                    color_cycler: "{{ is_state('input_boolean.festfx_v_color_cycler', 'on') }}"
+                    mixing_mode: "{{ states('input_select.festfx_v_mixing_mode') }}"
+                    responsiveness: "{{ states('input_number.festfx_v_responsiveness') | float(0) | round(2) }}"
+                    fade_rate: "{{ states('input_number.festfx_v_fade_rate') | float(0) | round(2) }}"
+                    bass_decay_rate: "{{ states('input_number.festfx_v_bass_decay_rate') | float(0) | round(2) }}"
+                    sparks_decay_rate: "{{ states('input_number.festfx_v_sparks_decay_rate') | float(0) | round(2) }}"
+                    sparks_color: "{{ states('input_text.festfx_v_sparks_color') }}"
+                    lows_sensitivity: "{{ states('input_number.festfx_v_lows_sensitivity') | float(0) | round(2) }}"
+                    mids_sensitivity: "{{ states('input_number.festfx_v_mids_sensitivity') | float(0) | round(2) }}"
+                    high_sensitivity: "{{ states('input_number.festfx_v_high_sensitivity') | float(0) | round(2) }}"
+                    pulse_strip: "{{ states('input_select.festfx_v_pulse_strip') }}"
+                    raindrop_animation: "{{ states('input_select.festfx_v_raindrop_animation') }}"
+                    color_scan: "{{ states('input_text.festfx_v_color_scan') }}"
+                    scan_width: "{{ states('input_number.festfx_v_scan_width') | float(0) | round(2) }}"
+                    speed: "{{ ((states('input_number.festfx_v_speed') | float(0)) * (14.9 if effect == 'lavalamp' else 19.9 if effect == 'rainbow' else 0.5 if effect == 'fire' else 100 if effect == 'scan' else 10 if effect == 'scroll' else 1) + (0.1 if effect in ['lavalamp', 'rainbow'] else 0)) | round(2) }}"
+                    use_grad: "{{ is_state('input_boolean.festfx_v_use_grad', 'on') }}"
+                    color_intensity: "{{ is_state('input_boolean.festfx_v_color_intensity', 'on') }}"
+                    bounce: "{{ is_state('input_boolean.festfx_v_bounce', 'on') }}"
+                    threshold: "{{ states('input_number.festfx_v_threshold') | float(0) | round(2) }}"
+                    rgb_mix: "{{ states('input_number.festfx_v_rgb_mix') | float(0) | round(2) }}"
+                    reactivity: "{{ states('input_number.festfx_v_reactivity') | float(0) | round(2) }}"
+                    sway: "{{ states('input_number.festfx_v_sway') | float(0) | round(2) }}"
+                    chop: "{{ states('input_number.festfx_v_chop') | float(0) | round(2) }}"
+                    stretch: "{{ states('input_number.festfx_v_stretch') | float(0) | round(2) }}"
+                    intensity: "{{ states('input_number.festfx_v_intensity') | float(0) | round(2) }}"
+                    color_shift: "{{ states('input_number.festfx_v_color_shift') | float(0) | round(2) }}"
+                    saturation_threshold: "{{ states('input_number.festfx_v_saturation_threshold') | float(0) | round(2) }}"
+                    contrast: "{{ states('input_number.festfx_v_contrast') | float(0) | round(2) }}"
+                    band_count: "{{ states('input_number.festfx_v_band_count') | float(0) | round(2) }}"
+                    gradient_repeat: "{{ states('input_number.festfx_v_gradient_repeat') | float(0) | round(2) }}"
+                    block_count: "{{ states('input_number.festfx_v_block_count') | float(0) | round(2) }}"
+                    flip_gradient: "{{ is_state('input_boolean.festfx_v_flip_gradient', 'on') }}"
+                    align: "{{ states('input_select.festfx_v_align') }}"
+          - conditions: "{{ action == 'last' }}"
+            sequence:
+              - service: rest_command.festfx_live
+                data:
+                  type: "{{ effect }}"
+                  active: false
+                  config_data: 
+                    brightness: "{{ states('input_number.festfx_v_brightness') | float(0) | round(2) }}"
+                    background_brightness: "{{ states('input_number.festfx_v_background_brightness') | float(0) | round(2) }}"
+      - choose:
+        - conditions: "{{ action == 'show' }}"
+          sequence:
+          - service: input_text.set_value
+            data:
+              entity_id: input_text.festfx_v_effect
+              value: "{{ effect }}"
+          - service: script.festfx_effect_configuration
+            data:
+              effect: "{{ effect }}"
+      - choose:
+          - conditions: "{{ action == 'post' or is_state('input_boolean.festfx_v_direct', 'on') }}"
+            sequence:
+              - service: input_text.set_value
+                data:
+                  entity_id: input_text.festfx_v_effect_playing
+                  value: "{{ effect | default(states('input_text.festfx_v_effect')) }}"
+              - service: input_boolean.turn_on
+                target:
+                  entity_id: input_boolean.festfx_v_sync
+  
+  
+  festfx_effect_launch:
+    sequence:
+      - service: script.festfx_effect_load_and_post
+        data:
+          action: post
+          effect: "{{ states('input_text.festfx_v_effect') }}"
+  
+  
+  festfx_effect_configuration:
+    #fields: effect
+    variables:
+       effect_variables: { bar: ["gradient","color_step","ease_method","mode","beat_skip","skip_every"], multiBar: ["gradient","color_step","ease_method","mode2"], strobe: ["gradient","beat_decay","strobe_decay","strobe_pattern","strobe_frequency"], blade_power_plus: ["gradient","decay","gradient_roll","multiplier","fix_hues","frequency_range"], energy: ["color_lows","color_mids","color_high","sensitivity","color_cycler","mixing_mode"], magnitude: ["gradient","gradient_roll","frequency_range"], pitchSpectrum: ["gradient","gradient_roll","fade_rate","responsiveness"], power: ["gradient","gradient_roll","bass_decay_rate","sparks_color","sparks_decay_rate"], rain: ["color_lows","color_mids","color_high","lows_sensitivity","mids_sensitivity","high_sensitivity","pulse_strip","raindrop_animation"], scan: ["gradient","color_scan","speed","multiplier","use_grad","scan_width","color_intensity","bounce","frequency_range"], scroll: ["color_lows","color_mids","color_high","speed","decay","threshold"], spectrum: ["rgb_mix"], wavelength: ["gradient","gradient_roll"], block_reflections: ["gradient","gradient_roll","speed","reactivity","decay","fix_hues"], crawler: ["gradient","gradient_roll","speed","reactivity","sway","chop","stretch","fix_hues"], energy2: ["gradient","gradient_roll","speed","reactivity","fix_hues"], fire: ["gradient","gradient_roll","intensity","speed","color_shift","fix_hues"], glitch: ["gradient","gradient_roll","speed","reactivity","saturation_threshold","fix_hues"], lava_lamp: ["gradient","gradient_roll","speed","contrast","reactivity","fix_hues"], marching: ["gradient","gradient_roll","speed","reactivity","fix_hues"], melt: ["gradient","gradient_roll","speed","reactivity","fix_hues"], melt_and_sparkle: ["gradient","gradient_roll","speed","reactivity","fix_hues"], water: ["gradient","gradient_roll","speed","fix_hues"], bands: ["gradient","band_count","gradient_roll","align"], bands_matrix: ["gradient","band_count","gradient_roll","flip_gradient"], blocks: ["gradient","block_count","gradient_roll"], equalizer: ["gradient","gradient_repeat","gradient_roll","align"], rainbow: ["speed"] }
+    sequence:
+      - service: homeassistant.turn_off
+        target:
+          entity_id: >
+            {{ expand(states.input_boolean)
+               | selectattr('entity_id', 'search', '^input_boolean\\.festfx_b_')
+               | map(attribute='entity_id')
+               | list }}
+      - service: homeassistant.turn_on
+        target:
+          entity_id: >
+            {{ effect_variables[effect]
+               | map('regex_replace', '^(.*)$', 'input_boolean.festfx_b_\\1')
+               | list }}
+
+  festfx_effect_popup:
+    sequence:
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.festfx_v_color_select
+        value: "{{ input }}"
+    - service: browser_mod.popup
+      data:
+        title: Color picker
+        size: normal
+        content: !include /config/festfx/colors.yaml
+        style: >
+          ha-dialog-header {display:none;}
+          hui-vertical-stack-card {padding:10px;}
+          * {border:none;}
+        deviceID:
+          - this
+ 
+          
+  festfx_effect_color:
+    sequence:
+    - variables:
+        target_input: "input_text.festfx_v_{{ states('input_text.festfx_v_color_select') }}"
+    - service: input_text.set_value
+      data:
+        entity_id: "{{ target_input }}"
+        value: "{{ color }}"
+    - service: browser_mod.close_popup

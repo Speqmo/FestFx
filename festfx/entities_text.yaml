@@ -1,0 +1,116 @@
+#effect_variables - preset_colors - presets
+input_text:
+  
+  
+  #effect_variables
+  festfx_v_effect:
+  festfx_v_effect_playing:
+   
+  festfx_v_color_select:
+  festfx_v_color_scan:
+  festfx_v_gradient:
+  festfx_v_sparks_color:
+  festfx_v_background_color:
+  festfx_v_lows:
+  festfx_v_mids:
+  festfx_v_high:
+  festfx_v_ease_method:
+
+
+  #preset_colors
+  festfx_c_1_background: { max: 1000 }
+  festfx_c_2_background: { max: 1000 }
+  festfx_c_3_background: { max: 1000 }
+  festfx_c_4_background: { max: 1000 }
+  festfx_c_5_background: { max: 1000 }
+  festfx_c_6_background: { max: 1000 }
+
+  festfx_c_1: { max: 1000 }
+  festfx_c_2: { max: 1000 }
+  festfx_c_3: { max: 1000 }
+  festfx_c_4: { max: 1000 }
+  festfx_c_5: { max: 1000 }
+  festfx_c_6: { max: 1000 }
+  
+  
+  #presets
+  festfx_p_1_name: { max: 1000 }
+  festfx_p_2_name: { max: 1000 }
+  festfx_p_3_name: { max: 1000 }
+  festfx_p_4_name: { max: 1000 }
+  festfx_p_5_name: { max: 1000 }
+  festfx_p_6_name: { max: 1000 }
+  festfx_p_7_name: { max: 1000 }
+  festfx_p_8_name: { max: 1000 }
+  festfx_p_9_name: { max: 1000 }
+  festfx_p_10_name: { max: 1000 }
+  festfx_p_11_name: { max: 1000 }
+  festfx_p_12_name: { max: 1000 }
+  festfx_p_13_name: { max: 1000 }
+  festfx_p_14_name: { max: 1000 }
+  festfx_p_15_name: { max: 1000 }
+  festfx_p_16_name: { max: 1000 }
+  festfx_p_17_name: { max: 1000 }
+  festfx_p_18_name: { max: 1000 }
+  festfx_p_19_name: { max: 1000 }
+  festfx_p_20_name: { max: 1000 }
+  festfx_p_21_name: { max: 1000 }
+  festfx_p_22_name: { max: 1000 }
+  festfx_p_23_name: { max: 1000 }
+  festfx_p_24_name: { max: 1000 }
+  festfx_p_25_name: { max: 1000 }
+  festfx_p_26_name: { max: 1000 }
+  festfx_p_27_name: { max: 1000 }
+  festfx_p_28_name: { max: 1000 }
+  festfx_p_29_name: { max: 1000 }
+  festfx_p_30_name: { max: 1000 }
+  festfx_p_31_name: { max: 1000 }
+  festfx_p_32_name: { max: 1000 }
+  festfx_p_33_name: { max: 1000 }
+  festfx_p_34_name: { max: 1000 }
+  festfx_p_35_name: { max: 1000 }
+  festfx_p_36_name: { max: 1000 }
+  festfx_p_37_name: { max: 1000 }
+  festfx_p_38_name: { max: 1000 }
+  festfx_p_39_name: { max: 1000 }
+  festfx_p_40_name: { max: 1000 }
+  festfx_p_1: { max: 1000 }
+  festfx_p_2: { max: 1000 }
+  festfx_p_3: { max: 1000 }
+  festfx_p_4: { max: 1000 }
+  festfx_p_5: { max: 1000 }
+  festfx_p_6: { max: 1000 }
+  festfx_p_7: { max: 1000 }
+  festfx_p_8: { max: 1000 }
+  festfx_p_9: { max: 1000 }
+  festfx_p_10: { max: 1000 }
+  festfx_p_11: { max: 1000 }
+  festfx_p_12: { max: 1000 }
+  festfx_p_13: { max: 1000 }
+  festfx_p_14: { max: 1000 }
+  festfx_p_15: { max: 1000 }
+  festfx_p_16: { max: 1000 }
+  festfx_p_17: { max: 1000 }
+  festfx_p_18: { max: 1000 }
+  festfx_p_19: { max: 1000 }
+  festfx_p_20: { max: 1000 }
+  festfx_p_21: { max: 1000 }
+  festfx_p_22: { max: 1000 }
+  festfx_p_23: { max: 1000 }
+  festfx_p_24: { max: 1000 }
+  festfx_p_25: { max: 1000 }
+  festfx_p_26: { max: 1000 }
+  festfx_p_27: { max: 1000 }
+  festfx_p_28: { max: 1000 }
+  festfx_p_29: { max: 1000 }
+  festfx_p_30: { max: 1000 }
+  festfx_p_31: { max: 1000 }
+  festfx_p_32: { max: 1000 }
+  festfx_p_33: { max: 1000 }
+  festfx_p_34: { max: 1000 }
+  festfx_p_35: { max: 1000 }
+  festfx_p_36: { max: 1000 }
+  festfx_p_37: { max: 1000 }
+  festfx_p_38: { max: 1000 }
+  festfx_p_39: { max: 1000 }
+  festfx_p_40: { max: 1000 }

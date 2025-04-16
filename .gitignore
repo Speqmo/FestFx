@@ -1,0 +1,15 @@
+# Negeer alles
+*
+
+# Behoud deze mappen en bestanden
+!.gitignore
+!festfx/
+!festfx/**
+!festfx-dashboard/
+!festfx-dashboard/**
+!themes/festfx-theme/
+!themes/festfx-theme/**
+!www/FestFx.html
+!www/FestFx_preview.html
+!README.md
+!LICENSE

@@ -1,0 +1,218 @@
+#preset - preset_post - preset_save - preset_load - preset_colors
+script:
+          
+          
+  festfx_preset:
+    #fields: action(click,hold)
+    variables:
+      preset: "{{ preset | int }}"
+      preset_helper: "input_text.festfx_p_{{ preset }}"
+      playlist_select: "input_select.festfx_p_{{ preset }}"
+    sequence:
+      - choose:
+          - conditions: "{{ action == 'click' and is_state('input_boolean.festfx_s_name', 'on') }}"
+            sequence:
+              - service: browser_mod.popup
+                data:
+                  title: "Rename"
+                  content:
+                    type: entities
+                    entities:
+                      - "{{ preset_helper }}_name"
+          - conditions: "{{ action == 'click' and is_state('input_boolean.festfx_s_playlist', 'on') }}"
+            sequence:
+              - service: input_select.select_next
+                target:
+                  entity_id: "{{ playlist_select }}"
+          - conditions: "{{ action == 'click' and is_state('input_boolean.festfx_s_preset_save', 'on') }}"
+            sequence:
+              - service: script.festfx_preset_save
+                data:
+                  preset_id: "{{ preset_id }}"
+          - conditions: "{{ action == 'hold' or is_state('input_boolean.festfx_v_settings', 'on') }}"
+            sequence:
+              - service: script.festfx_preset_load
+                data:
+                  preset: "{{ preset }}"
+                  action: load
+          - conditions: "{{ action == 'click' }}"
+            sequence:
+              - service: script.festfx_preset_post
+                data:
+                  preset: "{{ preset }}"
+
+
+  festfx_preset_post:
+    #fields: preset
+    variables:
+      preset_json: >
+        {% if preset_json is defined %}
+          {{ preset_json | from_json }}
+        {% else %}
+          {{ states('sensor.festfx_preset_' ~ preset) | from_json }}
+        {% endif %}
+      effect: "{{ preset_json.effect }}"
+      config_data: >
+        {{
+          dict(
+            (preset_json.items() | rejectattr(0, 'equalto', 'effect') | list) +
+            ([('brightness', states('input_number.festfx_v_brightness') | float(0))] if is_state('input_boolean.festfx_s_current_brightness', 'on') and 'brightness' in preset_json else []) +
+            ([('background_brightness', states('input_number.festfx_v_background_brightness') | float(0))] if is_state('input_boolean.festfx_s_current_brightness', 'on') and 'background_brightness' in preset_json else []) +
+            ([('color_lows', states('input_text.festfx_v_lows'))] if is_state('input_boolean.festfx_s_current_colors', 'on') and 'color_lows' in preset_json else []) +
+            ([('color_mids', states('input_text.festfx_v_mids'))] if is_state('input_boolean.festfx_s_current_colors', 'on') and 'color_mids' in preset_json else []) +
+            ([('color_high', states('input_text.festfx_v_high'))] if is_state('input_boolean.festfx_s_current_colors', 'on') and 'color_high' in preset_json else []) +
+            ([('gradient', states('input_text.festfx_v_gradient'))] if is_state('input_boolean.festfx_s_current_colors', 'on') and 'gradient' in preset_json else [])
+          )
+        }}
+    sequence:
+      - service: rest_command.festfx_live
+        data:
+          type: "{{ effect }}"
+          config_data: "{{ config_data }}"
+          active: false 
+          
+                  
+  festfx_preset_save:
+    mode: parallel
+    variables:
+      preset: "{{ preset | int }}"
+      effect: "{{ states('input_text.festfx_v_effect') }}" 
+      json_global: >
+        {{ '"effect":"' ~ effect ~ '"' ~ ',"mirror":' ~ ('true' if is_state('input_boolean.festfx_v_mirror', 'on') else 'false') ~ ',"flip":' ~ ('true' if is_state('input_boolean.festfx_v_flip', 'on') else 'false') ~ ',"blur":' ~ (states('input_number.festfx_v_blur') | float(0) | round(2)) ~ ',"background_color":"' ~ states('input_text.festfx_v_background_color') ~ '"' }}
+      json_brightness: >
+        {{ '"brightness":' ~ (states('input_number.festfx_v_brightness') | float(0) | round(2)) ~ ',"background_brightness":' ~ (states('input_number.festfx_v_background_brightness') | float(0) | round(2)) }}
+      json_color: >
+        {% if effect in ['energy', 'rain', 'scroll'] %}{{ '"color_lows":"' ~ states('input_text.festfx_v_lows') ~ '","color_mids":"' ~ states('input_text.festfx_v_mids') ~ '","color_high":"' ~ states('input_text.festfx_v_high') ~ '"' }}{% else %}{{ '"gradient":"' ~ states('input_text.festfx_v_gradient') ~ '"' }}{% endif %}
+      json_effect_vars: >
+        {% if effect == 'bar' %}{{ '"color_step":' ~ (states('input_number.festfx_v_color_step') | float(0) | round(2)) ~ ',"ease_method":"' ~ states('input_select.festfx_v_ease_method') ~ '","mode":"' ~ states('input_select.festfx_v_mode') ~ '","beat_skip":"' ~ states('input_select.festfx_v_beat_skip') ~ '"' }}
+        {% elif effect == 'multiBar' %}{{ '"color_step":' ~ (states('input_number.festfx_v_color_step') | float(0) | round(2)) ~ ',"ease_method":"' ~ states('input_select.festfx_v_ease_method') ~ '","mode2":"' ~ states('input_select.festfx_v_mode2') ~ '"' }}
+        {% elif effect == 'strobe' %}{{ '"beat_decay":' ~ (states('input_number.festfx_v_beat_decay') | float(0) | round(2)) ~ ',"strobe_decay":' ~ (states('input_number.festfx_v_strobe_decay') | float(0) | round(2)) ~ ',"strobe_pattern":"' ~ states('input_select.festfx_v_strobe_pattern') ~ '","strobe_frequency":"' ~ states('input_select.festfx_v_strobe_frequency') ~ '"' }}
+        {% elif effect == 'blade_power_plus' %}{{ '"decay":' ~ (states('input_number.festfx_v_decay') | float(0) | round(2)) ~ ',"gradient_roll":' ~ (states('input_number.festfx_v_gradient_roll') | float(0) | round(2)) ~ ',"multiplier":' ~ (states('input_number.festfx_v_multiplier') | float(0) | round(2)) ~ ',"fix_hues":' ~ ('true' if is_state('input_boolean.festfx_v_fix_hues', 'on') else 'false') ~ ',"frequency_range":"' ~ states('input_select.festfx_v_frequency_range') ~ '"' }}
+        {% elif effect == 'bands_matrix' %}{{ '"band_count":' ~ (states('input_number.festfx_v_band_count') | float(0) | round(2)) ~ ',"gradient_roll":' ~ (states('input_number.festfx_v_gradient_roll') | float(0) | round(2)) ~ ',"flip_gradient":' ~ ('true' if is_state('input_boolean.festfx_v_flip_gradient', 'on') else 'false') }}
+        {% elif effect == 'energy' %}{{ '"sensitivity":' ~ (states('input_number.festfx_v_sensitivity') | float(0) | round(2)) ~ ',"color_cycler":' ~ ('true' if is_state('input_boolean.festfx_v_color_cycler', 'on') else 'false') ~ ',"mixing_mode":"' ~ states('input_select.festfx_v_mixing_mode') ~ '"' }}
+        {% elif effect == 'scroll' %}{{ '"speed":' ~ ((states('input_number.festfx_v_speed') | float(0) * 10) | round(2)) ~ ',"decay":' ~ ((states('input_number.festfx_v_decay') | float(0) * 0.2 + 0.8) | round(2)) ~ ',"threshold":' ~ (states('input_number.festfx_v_threshold') | float(0) | round(2)) }}
+        {% elif effect == 'equalizer' %}{{ '"gradient_repeat":' ~ (states('input_number.festfx_v_gradient_repeat') | float(0) | round(2)) ~ ',"gradient_roll":' ~ (states('input_number.festfx_v_gradient_roll') | float(0) | round(2)) ~ ',"align":"' ~ states('input_select.festfx_v_align') ~ '"' }}
+        {% else %}{{ '' }}{% endif %}
+      json_combined: >
+        {{ '{' + json_global + ',' + json_brightness + ',' + json_color + (',' + json_effect_vars if json_effect_vars | length > 0 else '') + '}' }}
+      json_combined_clean: >
+        {{ json_combined.replace(' ', '_space_').replace('%', '_pct_') }}
+    sequence:
+      - service: mqtt.publish
+        data:
+          topic: "festfx/presets/p_{{ preset }}"
+          payload: "{{ json_combined }}"
+          retain: true
+          
+          
+  festfx_preset_load:
+    #fields: preset
+    variables:
+      effect_variables: { bar: ["gradient","color_step","ease_method","mode","beat_skip","skip_every"], multiBar: ["gradient","color_step","ease_method","mode2"], strobe: ["gradient","beat_decay","strobe_decay","strobe_pattern","strobe_frequency"], blade_power_plus: ["gradient","decay","gradient_roll","multiplier","fix_hues","frequency_range"], energy: ["color_lows","color_mids","color_high","sensitivity","color_cycler","mixing_mode"], magnitude: ["gradient","gradient_roll","frequency_range"], pitchSpectrum: ["gradient","gradient_roll","fade_rate","responsiveness"], power: ["gradient","gradient_roll","bass_decay_rate","sparks_color","sparks_decay_rate"], rain: ["color_lows","color_mids","color_high","lows_sensitivity","mids_sensitivity","high_sensitivity","pulse_strip","raindrop_animation"], scan: ["gradient","color_scan","speed","multiplier","use_grad","scan_width","color_intensity","bounce","frequency_range"], scroll: ["color_lows","color_mids","color_high","speed","decay","threshold"], spectrum: ["rgb_mix"], wavelength: ["gradient","gradient_roll"], block_reflections: ["gradient","gradient_roll","speed","reactivity","decay","fix_hues"], crawler: ["gradient","gradient_roll","speed","reactivity","sway","chop","stretch","fix_hues"], energy2: ["gradient","gradient_roll","speed","reactivity","fix_hues"], fire: ["gradient","gradient_roll","intensity","speed","color_shift","fix_hues"], glitch: ["gradient","gradient_roll","speed","reactivity","saturation_threshold","fix_hues"], lava_lamp: ["gradient","gradient_roll","speed","contrast","reactivity","fix_hues"], marching: ["gradient","gradient_roll","speed","reactivity","fix_hues"], melt: ["gradient","gradient_roll","speed","reactivity","fix_hues"], melt_and_sparkle: ["gradient","gradient_roll","speed","reactivity","fix_hues"], water: ["gradient","gradient_roll","speed","fix_hues"], bands: ["gradient","band_count","gradient_roll","align"], bands_matrix: ["gradient","band_count","gradient_roll","flip_gradient"], blocks: ["gradient","block_count","gradient_roll"], equalizer: ["gradient","gradient_repeat","gradient_roll","align"], rainbow: ["speed"] }
+      preset: "{{ preset | int }}"
+      preset_raw: "{{ states('sensor.festfx_preset_' ~ preset) }}"
+      preset_valid: "{{ preset_raw != 'unknown' and preset_raw != '' }}"
+      preset_json: "{{ preset_raw | from_json if preset_valid else {} }}"
+      effect: "{{ preset_json.effect }}"
+    sequence:
+      - service: script.festfx_setting_configuration
+        data:
+          effect: "{{ effect }}"
+      - repeat:
+          for_each: "{{ effect_variables[effect] + ['effect'] }}"
+          sequence:
+            - choose:
+                - conditions:
+                    - condition: template
+                      value_template: "{{ repeat.item in preset_json }}"
+                    - condition: template
+                      value_template: >-
+                        {% set color_keys = ['gradient','color_lows','color_mids','color_high'] %}
+                        {% if repeat.item in color_keys %}
+                          {{ is_state('input_boolean.festfx_s_current_colors', 'off') }}
+                        {% else %}
+                          true
+                        {% endif %}
+                  sequence:
+                    - choose:
+                        - conditions: "{{ repeat.item in ['bounce','fix_hues','mirror','flip','pulse_strip','flip_gradient','use_grad'] }}"
+                          sequence:
+                            - service: >
+                                input_boolean.turn_{{ 'on' if preset_json[repeat.item] else 'off' }}
+                              data:
+                                entity_id: "input_boolean.festfx_v_{{ repeat.item }}"
+                        - conditions: "{{ repeat.item in ['decay','multiplier','brightness','background_brightness','color_step','fade_rate','intensity','responsiveness','contrast','threshold','speed','scan_width','saturation_threshold','band_count','block_count','high_sensitivity','mids_sensitivity','lows_sensitivity','sensitivity'] }}"
+                          sequence:
+                            - service: input_number.set_value
+                              data:
+                                entity_id: "input_number.festfx_v_{{ repeat.item }}"
+                                value: "{{ preset_json[repeat.item] }}"
+                        - conditions: "{{ repeat.item in ['ease_method','mode','mode2','color_shift','color_cycler','chop','stretch','gradient_roll','frequency_range','beat_skip','skip_every','sparks_decay_rate','strobe_pattern','beat_decay','mixing_mode','reactivity','raindrop_animation','rgb_mix'] }}"
+                          sequence:
+                            - service: input_select.select_option
+                              data:
+                                entity_id: "input_select.festfx_v_{{ repeat.item }}"
+                                option: "{{ preset_json[repeat.item] }}"
+                        - conditions: []
+                          sequence:
+                            - service: input_text.set_value
+                              data:
+                                entity_id: >
+                                  {% if repeat.item == 'effect' %}
+                                    input_text.festfx_v_effect
+                                  {% else %}
+                                    input_text.festfx_v_{{ repeat.item }}
+                                  {% endif %}
+                                value: "{{ preset_json[repeat.item] }}"
+                                
+                                
+  festfx_preset_colors:
+    #fields: preset, action
+    sequence:
+      - variables:
+          preset_entity: "input_text.festfx_c_{{ preset }}"
+          background_entity: "input_text.festfx_c_{{ preset }}_background"
+      - choose:
+          - conditions: "{{ action == 'save' }}"
+            sequence:
+              - variables:
+                  gradient: "{{ states('input_text.festfx_v_gradient') }}"
+                  lows: "{{ states('input_text.festfx_v_lows') }}"
+                  mids: "{{ states('input_text.festfx_v_mids') }}"
+                  highs: "{{ states('input_text.festfx_v_high') }}"
+                  payload: "{{ {'gradient': gradient, 'lows': lows, 'mids': mids, 'highs': highs} | to_json }}"
+              - service: input_text.set_value
+                data:
+                  entity_id: "{{ preset_entity }}"
+                  value: "{{ payload }}"
+              - service: input_text.set_value
+                data:
+                  entity_id: "{{ background_entity }}"
+                  value: "{{ gradient }}"
+          - conditions: "{{ action == 'load' }}"
+            sequence:
+              - variables:
+                  raw_json: "{{ states(preset_entity) | string | default('{}') }}"
+                  data: >
+                    {% set raw = raw_json | string %}
+                    {% if raw[:1] == '{' %}
+                      {{ raw | from_json }}
+                    {% else %}
+                      {}
+                    {% endif %}
+              - service: input_text.set_value
+                data:
+                  entity_id: input_text.festfx_v_gradient
+                  value: "{{ data.gradient | default('') }}"
+              - service: input_text.set_value
+                data:
+                  entity_id: input_text.festfx_v_lows
+                  value: "{{ data.lows | default('') }}"
+              - service: input_text.set_value
+                data:
+                  entity_id: input_text.festfx_v_mids
+                  value: "{{ data.mids | default('') }}"
+              - service: input_text.set_value
+                data:
+                  entity_id: input_text.festfx_v_high
+                  value: "{{ data.highs | default('') }}"

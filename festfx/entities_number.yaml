@@ -1,0 +1,37 @@
+#effect_variables
+input_number:
+
+
+  #effect_variables
+  festfx_v_brightness: {initial: 1, min: 0, max: 1, step: 0.01}
+  festfx_v_background_brightness: {initial: 1, min: 0, max: 1, step: 0.01}
+  festfx_v_blur: {initial: 0.5, min: 0, max: 10, step: 0.01}
+  festfx_v_color_step: {initial: 0.25, min: 0.07, max: 0.5, step: 0.01} 
+  festfx_v_beat_decay: {initial: 0.5, min: 0, max: 10, step: 0.01} 
+  festfx_v_strobe_decay: {initial: 5, min: 1, max: 10, step: 0.01} 
+  festfx_v_gradient_roll: {initial: 5, min: 0, max: 10, step: 0.01} 
+  festfx_v_decay: {initial: 0.5, min: 0, max: 1, step: 0.01} 
+  festfx_v_multiplier: {initial: 0.5, min: 0, max: 1, step: 0.01} 
+  festfx_v_fade_rate: {initial: 0.5, min: 0, max: 1, step: 0.01} 
+  festfx_v_responsiveness: {initial: 0.5, min: 0, max: 1, step: 0.01} 
+  festfx_v_sensitivity: {initial: 0.5, min: 0.3, max: 0.99, step: 0.01} 
+  festfx_v_bass_decay_rate: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_sparks_decay_rate: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_lows_sensitivity: {initial: 0.15, min: 0.03, max: 0.3, step: 0.01}
+  festfx_v_mids_sensitivity: {initial: 0.15, min: 0.03, max: 0.3, step: 0.01}
+  festfx_v_high_sensitivity: {initial: 0.15, min: 0.03, max: 0.3, step: 0.01}
+  festfx_v_scan_width: {initial: 50, min: 1, max: 100, step: 0.01}
+  festfx_v_speed: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_threshold: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_rgb_mix: {initial: 0, min: 0, max: 5, step: 1}
+  festfx_v_reactivity: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_sway: {initial: 25, min: 0, max: 50, step: 0.1}
+  festfx_v_chop: {initial: 50, min: 0, max: 100, step: 0.1}
+  festfx_v_stretch: {initial: 5, min: 0, max: 10, step: 0.01}
+  festfx_v_intensity: {initial: 16, min: 1, max: 30, step: 1}
+  festfx_v_color_shift: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_saturation_threshold: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_contrast: {initial: 0.5, min: 0, max: 1, step: 0.01}
+  festfx_v_band_count: {initial: 8, min: 1, max: 16, step: 1}
+  festfx_v_gradient_repeat: {initial: 8, min: 1, max: 16, step: 1}
+  festfx_v_block_count: {initial: 5, min: 1, max: 10, step: 1}

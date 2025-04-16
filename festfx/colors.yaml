@@ -1,0 +1,885 @@
+type: vertical-stack
+cards:
+  - type: grid
+    columns: 4
+    square: false
+    cards:
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#b92b27 0%, #1565c0 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#b92b27 0%, #1565c0 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#c31432 0%, #240b36 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#c31432 0%, #240b36 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#005aa7 0%, #fffde4 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#005aa7 0%, #fffde4 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#fffbd5 0%, #b20a2c 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#fffbd5 0%, #b20a2c 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#00b09b 0%, #96c93d 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#00b09b 0%, #96c93d 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#00f260 0%, #0575e6 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#00f260 0%, #0575e6 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#000000 0%, #0f9b0f 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#000000 0%, #0f9b0f 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#22c1c3 0%, #fdbb2d 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#22c1c3 0%, #fdbb2d 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#ef3b36 0%, #ffffff 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#ef3b36 0%, #ffffff 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#3494e6 0%, #ec6ead 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#3494e6 0%, #ec6ead 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#a1ffce 0%, #faffd1 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#a1ffce 0%, #faffd1 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#ffd89b 0%, #19547b 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#ffd89b 0%, #19547b 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#f79d00 0%, #64f38c 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#f79d00 0%, #64f38c 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#ff4b1f 0%, #1fddff 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#ff4b1f 0%, #1fddff 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#f7ff00 0%, #db36a4 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#f7ff00 0%, #db36a4 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#0099f7 0%, #f11712 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#0099f7 0%, #f11712 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#2f7336 0%, #aa3a38 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#2f7336 0%, #aa3a38 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#5614b0 0%, #dbd65c 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#5614b0 0%, #dbd65c 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#c02425 0%, #f0cb35 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#c02425 0%, #f0cb35 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#00c9ff 0%, #92fe9d 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#00c9ff 0%, #92fe9d 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#f1f2b5 0%, #135058 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#f1f2b5 0%, #135058 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#780206 0%, #061161 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#780206 0%, #061161 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#f0c27b 0%, #4b1248 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#f0c27b 0%, #4b1248 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#fbd3e9 0%, #bb377d 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#fbd3e9 0%, #bb377d 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#c6ffdd 0%, #fbd786 50%, #f7797d 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#c6ffdd 0%, #fbd786 50%, #f7797d 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#12c2e9 0%, #c471ed 50%, #f64f59 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#12c2e9 0%, #c471ed 50%, #f64f59 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#aa4b6b 0%, #6b6b83 50%, #3b8d99 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#aa4b6b 0%, #6b6b83 50%, #3b8d99 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#1e9600 0%, #fff200 50%, #ff0000 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#1e9600 0%, #fff200 50%, #ff0000 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#40e0d0 0%, #ff8c00 50%, #ff0080 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#40e0d0 0%, #ff8c00 50%, #ff0080 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#833ab4 0%, #fd1d1d 50%, #fcb045 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#833ab4 0%, #fd1d1d 50%, #fcb045 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#feac5e 0%, #c779d0 50%, #4bc0c8 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#feac5e 0%, #c779d0 50%, #4bc0c8 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#03001e 0%, #7303c0 33%, #ec38bc 66%, #fdeff9 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#03001e 0%, #7303c0 33%, #ec38bc 66%, #fdeff9 100%);}'
+
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#0000aa 0%,#ff0080 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#0000aa 0%,#ff0080 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#ffaa00 0%,#0000aa 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#ffaa00 0%,#0000aa 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#00ffff 0%,#ffaa00 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#00ffff 0%,#ffaa00 100%);}'
+    
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        show_name: false
+        button_action:
+          tap_action:
+            action: call-service
+            service: script.festfx_effect_color
+            data:
+              color: "linear-gradient(90deg,#0080ff 0%,#ffff00 100%)"
+        card_mod:
+          class: color-button
+          style: '.bubble-button-background {background:linear-gradient(90deg,#0080ff 0%,#ffff00 100%);}'
+          
+  - type: grid
+    columns: 3
+    square: false
+    cards:  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:transparent;}'
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:transparent;}'
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:transparent;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#000000"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#000000;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#bcc6cc"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#bcc6cc;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ffffff"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ffffff;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#0000aa"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#0000aa;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#0000ff"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#0000ff;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#5555ff"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#5555ff;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#00aaaa"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#00aaaa;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#00ffff"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#00ffff;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#55ffff"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#55ffff;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#00aa00"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#00aa00;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#00ff00"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#00ff00;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#55ff55"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#55ff55;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#aaaa00"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#aaaa00;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ffff00"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ffff00;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ffff55"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ffff55;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#aa5500"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#aa5500;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ffaa00"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ffaa00;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ffbf00"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ffbf00;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#aa0000"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#aa0000;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ff0000"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ff0000;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ff5555"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ff5555;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#cc0066"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#cc0066;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ff0080"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ff0080;}'
+  
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      show_name: false
+      button_action:
+        tap_action:
+          action: call-service
+          service: script.festfx_effect_color
+          data:
+            color: "#ff55ff"
+      card_mod:
+        class: color-button
+        style: '.bubble-button-background {background:#ff55ff;}'

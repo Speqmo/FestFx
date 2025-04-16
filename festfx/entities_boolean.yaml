@@ -1,0 +1,83 @@
+#settings - effect_variables - effect_configuration
+input_boolean:
+
+
+  #settings
+  festfx_s_auto:
+  festfx_s_playlist_show:
+  festfx_s_current_brightness:
+  
+  
+  #effect_variables
+  festfx_s_current_colors:
+  festfx_s_preset_save:
+  festfx_s_playlist:
+  festfx_s_name:
+  festfx_s_tabs:
+  festfx_v_sync:
+  festfx_v_flip_gradient:
+  festfx_v_settings:
+  festfx_v_direct:
+  festfx_v_use_grad:
+  festfx_v_color_intensity:
+  festfx_v_bounce:
+  festfx_v_mirror:
+  festfx_v_flip:
+  
+  
+  #effect_configuration
+  festfx_b_scan_width:
+  festfx_v_fix_hues:
+  festfx_v_color_cycler:
+  festfx_b_bass_decay_rate:
+  festfx_b_sparks_color:
+  festfx_b_sparks_decay_rate:
+  festfx_b_reactivity:
+  festfx_b_sway:
+  festfx_b_chop:
+  festfx_b_stretch:
+  festfx_b_intensity:
+  festfx_b_color_shift:
+  festfx_b_saturation_threshold:
+  festfx_b_contrast:
+  festfx_b_band_count:
+  festfx_b_gradient_repeat:
+  festfx_b_block_count:
+  festfx_b_flip_gradient:
+  festfx_b_align:
+  festfx_b_lows_sensitivity:
+  festfx_b_mids_sensitivity:
+  festfx_b_high_sensitivity:
+  festfx_b_pulse_strip:
+  festfx_b_raindrop_animation:
+  festfx_b_color_scan:
+  festfx_b_speed:
+  festfx_b_use_grad:
+  festfx_b_color_intensity:
+  festfx_b_bounce:
+  festfx_b_threshold:
+  festfx_b_rgb_mix:
+  festfx_b_gradient:
+  festfx_b_color_lows:
+  festfx_b_color_mids:
+  festfx_b_color_high:
+  festfx_b_color_step:
+  festfx_b_ease_method:
+  festfx_b_mode:
+  festfx_b_beat_skip:
+  festfx_b_skip_every:
+  festfx_b_mode2:
+  festfx_b_strobe_pattern:
+  festfx_b_strobe_frequency:
+  festfx_b_beat_decay:
+  festfx_b_strobe_decay:
+  festfx_b_decay:
+  festfx_b_gradient_roll:
+  festfx_b_multiplier:
+  festfx_b_fix_hues:
+  festfx_b_frequency_range:
+  festfx_b_color_cycler:
+  festfx_b_sensitivity:
+  festfx_b_mixing_mode:
+  festfx_b_fade_rate:
+  festfx_b_responsiveness:

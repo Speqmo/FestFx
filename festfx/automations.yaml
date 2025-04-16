@@ -1,0 +1,97 @@
+#FestFx Auto - FestFx Direct - FestFx Preview - FestFx Preset Modes
+automation:
+  - alias: FestFx Auto
+    trigger:
+    condition: []
+    action:
+      - variables:
+          all_presets: >
+            {% set list = namespace(presets=[]) %}
+            {% for i in range(1, 41) %}
+              {% if states("input_select.festfx_p_" ~ i) == "high" %}
+                {% set list.presets = list.presets + [i] %}
+              {% endif %}
+            {% endfor %}
+            {{ list.presets }}
+      - choose:
+          - conditions: "{{ all_presets | length > 0 }}"
+            sequence:
+              - variables:
+                  preset: "{{ all_presets | random }}"
+              - if:
+                  - condition: state
+                    entity_id: input_boolean.festfx_s_current_colors
+                    state: "off"
+                then:
+                  - service: script.festfx_preset_colors
+                    data:
+                      preset: "{{ range(1, 7) | random }}"
+              - service: script.festfx_preset
+                data:
+                  action: click
+                  preset: "{{ preset }}"
+
+  - alias: FestFx Direct
+    mode: parallel
+    trigger:
+      - platform: state
+        entity_id: input_boolean.festfx_v_flip_gradient, input_boolean.festfx_v_use_grad, input_boolean.festfx_v_color_intensity, input_boolean.festfx_v_bounce, input_boolean.festfx_v_mirror, input_boolean.festfx_v_flip, input_boolean.festfx_v_fix_hues, input_boolean.festfx_v_color_cycler, input_text.festfx_v_color_scan, input_text.festfx_v_gradient, input_text.festfx_v_sparks_color, input_text.festfx_v_background_color, input_text.festfx_v_lows, input_text.festfx_v_mids, input_text.festfx_v_high, input_text.festfx_v_effect, input_select.festfx_v_ease_method, input_number.festfx_v_brightness, input_number.festfx_v_background_brightness, input_number.festfx_v_blur, input_number.festfx_v_color_step, input_number.festfx_v_beat_decay, input_number.festfx_v_strobe_decay, input_number.festfx_v_gradient_roll, input_number.festfx_v_decay, input_number.festfx_v_multiplier, input_number.festfx_v_fade_rate, input_number.festfx_v_responsiveness, input_number.festfx_v_sensitivity, input_number.festfx_v_bass_decay_rate, input_number.festfx_v_sparks_decay_rate, input_number.festfx_v_lows_sensitivity, input_number.festfx_v_mids_sensitivity, input_number.festfx_v_high_sensitivity, input_number.festfx_v_scan_width, input_number.festfx_v_speed, input_number.festfx_v_threshold, input_number.festfx_v_rgb_mix, input_number.festfx_v_reactivity, input_number.festfx_v_sway, input_number.festfx_v_chop, input_number.festfx_v_stretch, input_number.festfx_v_intensity, input_number.festfx_v_color_shift, input_number.festfx_v_saturation_threshold, input_number.festfx_v_contrast, input_number.festfx_v_band_count, input_number.festfx_v_gradient_repeat, input_number.festfx_v_block_count, input_select.festfx_v_ease_method, input_select.festfx_v_mode, input_select.festfx_v_mode2, input_select.festfx_v_beat_skip, input_select.festfx_v_skip_every, input_select.festfx_v_strobe_pattern, input_select.festfx_v_strobe_frequency, input_select.festfx_v_frequency_range, input_select.festfx_v_mixing_mode, input_select.festfx_v_pulse_strip, input_select.festfx_v_raindrop_animation, input_select.festfx_v_align
+    condition:
+      - condition: state
+        entity_id: input_boolean.festfx_v_direct
+        state: "on"
+    action:
+      - service: script.festfx_effect_load_and_post
+        data:
+          action: post
+          effect: "{{ states('input_text.festfx_v_effect') }}"
+
+  - alias: FestFx Preview
+    mode: parallel
+    trigger:
+      - platform: state
+        entity_id: input_boolean.festfx_v_flip_gradient, input_boolean.festfx_v_use_grad, input_boolean.festfx_v_color_intensity, input_boolean.festfx_v_bounce, input_boolean.festfx_v_mirror, input_boolean.festfx_v_flip, input_boolean.festfx_v_fix_hues, input_boolean.festfx_v_color_cycler, input_text.festfx_v_color_scan, input_text.festfx_v_gradient, input_text.festfx_v_sparks_color, input_text.festfx_v_background_color, input_text.festfx_v_lows, input_text.festfx_v_mids, input_text.festfx_v_high, input_text.festfx_v_effect, input_select.festfx_v_ease_method, input_number.festfx_v_brightness, input_number.festfx_v_background_brightness, input_number.festfx_v_blur, input_number.festfx_v_color_step, input_number.festfx_v_beat_decay, input_number.festfx_v_strobe_decay, input_number.festfx_v_gradient_roll, input_number.festfx_v_decay, input_number.festfx_v_multiplier, input_number.festfx_v_fade_rate, input_number.festfx_v_responsiveness, input_number.festfx_v_sensitivity, input_number.festfx_v_bass_decay_rate, input_number.festfx_v_sparks_decay_rate, input_number.festfx_v_lows_sensitivity, input_number.festfx_v_mids_sensitivity, input_number.festfx_v_high_sensitivity, input_number.festfx_v_scan_width, input_number.festfx_v_speed, input_number.festfx_v_threshold, input_number.festfx_v_rgb_mix, input_number.festfx_v_reactivity, input_number.festfx_v_sway, input_number.festfx_v_chop, input_number.festfx_v_stretch, input_number.festfx_v_intensity, input_number.festfx_v_color_shift, input_number.festfx_v_saturation_threshold, input_number.festfx_v_contrast, input_number.festfx_v_band_count, input_number.festfx_v_gradient_repeat, input_number.festfx_v_block_count, input_select.festfx_v_ease_method, input_select.festfx_v_mode, input_select.festfx_v_mode2, input_select.festfx_v_beat_skip, input_select.festfx_v_skip_every, input_select.festfx_v_strobe_pattern, input_select.festfx_v_strobe_frequency, input_select.festfx_v_frequency_range, input_select.festfx_v_mixing_mode, input_select.festfx_v_pulse_strip, input_select.festfx_v_raindrop_animation, input_select.festfx_v_align
+    action:
+      - service: script.festfx_effect_load_and_post
+        data:
+          action: preview
+          effect: "{{ states('input_text.festfx_v_effect') }}"
+
+  - alias: FestFx Preset Modes
+    mode: parallel
+    trigger:
+      - platform: state
+        entity_id:
+          - input_boolean.festfx_s_name
+          - input_boolean.festfx_s_playlist
+          - input_boolean.festfx_s_preset_save
+        to: "on"
+    action:
+      - choose:
+          - conditions:
+              - condition: template
+                value_template: "{{ trigger.entity_id == 'input_boolean.festfx_s_name' }}"
+            sequence:
+              - service: input_boolean.turn_off
+                target:
+                  entity_id:
+                    - input_boolean.festfx_s_playlist
+                    - input_boolean.festfx_s_preset_save
+          - conditions:
+              - condition: template
+                value_template: "{{ trigger.entity_id == 'input_boolean.festfx_s_playlist' }}"
+            sequence:
+              - service: input_boolean.turn_off
+                target:
+                  entity_id:
+                    - input_boolean.festfx_s_name
+                    - input_boolean.festfx_s_preset_save
+          - conditions:
+              - condition: template
+                value_template: "{{ trigger.entity_id == 'input_boolean.festfx_s_preset_save' }}"
+            sequence:
+              - service: input_boolean.turn_off
+                target:
+                  entity_id:
+                    - input_boolean.festfx_s_name
+                    - input_boolean.festfx_s_playlist

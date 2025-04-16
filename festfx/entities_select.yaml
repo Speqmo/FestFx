@@ -1,0 +1,64 @@
+#festfx_settings - effect_variables - presets
+input_select:
+  
+  
+  #festfx_settings
+  festfx_tabs: {options: ["effects", "presets", "auto"]}
+
+
+  #effect_variables
+  festfx_v_ease_method: {options: ["linear", "ease_in_out", "ease_in", "ease_out"], initial: "linear"}
+  festfx_v_mode: {options: ["wipe", "bounce", "in-out"]}
+  festfx_v_mode2: {options: ["cascade", "wipe"], initial: "cascade"}
+  festfx_v_beat_skip: {options: ["none", "odss", "even"], initial: "none"}
+  festfx_v_skip_every: {options: ["1", "2"], initial: "1"}
+  festfx_v_strobe_pattern: {options: ["*...", "*.*.", "****", "...*", ".*.*"], initial: "*..."}
+  festfx_v_strobe_frequency: {options: ["1/1 (.,. )", "1/2 (.-. )", "1/4 (.o. )"], initial: "1/1 (.,. )"}
+  festfx_v_frequency_range: {options: ["Beat", "Bass", "Lows (beat+bass)", "Mids", "High"], initial: "Lows (beat+bass)" }
+  festfx_v_mixing_mode: {options: ["additive", "overlap"], initial: "additive"}
+  festfx_v_pulse_strip: {options: ["Off", "Lows", "Mids", "Highs"], initial: "Lows"}
+  festfx_v_raindrop_animation: {options: ["Blob", "Laser", "Ripple"], initial: "Blob"}
+  festfx_v_align: {options: ["left", "right", "invert", "center"], initial: "center"}
+  
+  
+  #presets
+  festfx_p_1: {options: ["off", "low", "build up", "high"]}
+  festfx_p_2: {options: ["off", "low", "build up", "high"]}
+  festfx_p_3: {options: ["off", "low", "build up", "high"]}
+  festfx_p_4: {options: ["off", "low", "build up", "high"]}
+  festfx_p_5: {options: ["off", "low", "build up", "high"]}
+  festfx_p_6: {options: ["off", "low", "build up", "high"]}
+  festfx_p_7: {options: ["off", "low", "build up", "high"]}
+  festfx_p_8: {options: ["off", "low", "build up", "high"]}
+  festfx_p_9: {options: ["off", "low", "build up", "high"]}
+  festfx_p_10: {options: ["off", "low", "build up", "high"]}
+  festfx_p_11: {options: ["off", "low", "build up", "high"]}
+  festfx_p_12: {options: ["off", "low", "build up", "high"]}
+  festfx_p_13: {options: ["off", "low", "build up", "high"]}
+  festfx_p_14: {options: ["off", "low", "build up", "high"]}
+  festfx_p_15: {options: ["off", "low", "build up", "high"]}
+  festfx_p_16: {options: ["off", "low", "build up", "high"]}
+  festfx_p_17: {options: ["off", "low", "build up", "high"]}
+  festfx_p_18: {options: ["off", "low", "build up", "high"]}
+  festfx_p_19: {options: ["off", "low", "build up", "high"]}
+  festfx_p_20: {options: ["off", "low", "build up", "high"]}
+  festfx_p_21: {options: ["off", "low", "build up", "high"]}
+  festfx_p_22: {options: ["off", "low", "build up", "high"]}
+  festfx_p_23: {options: ["off", "low", "build up", "high"]}
+  festfx_p_24: {options: ["off", "low", "build up", "high"]}
+  festfx_p_25: {options: ["off", "low", "build up", "high"]}
+  festfx_p_26: {options: ["off", "low", "build up", "high"]}
+  festfx_p_27: {options: ["off", "low", "build up", "high"]}
+  festfx_p_28: {options: ["off", "low", "build up", "high"]}
+  festfx_p_29: {options: ["off", "low", "build up", "high"]}
+  festfx_p_30: {options: ["off", "low", "build up", "high"]}
+  festfx_p_31: {options: ["off", "low", "build up", "high"]}
+  festfx_p_32: {options: ["off", "low", "build up", "high"]}
+  festfx_p_33: {options: ["off", "low", "build up", "high"]}
+  festfx_p_34: {options: ["off", "low", "build up", "high"]}
+  festfx_p_35: {options: ["off", "low", "build up", "high"]}
+  festfx_p_36: {options: ["off", "low", "build up", "high"]}
+  festfx_p_37: {options: ["off", "low", "build up", "high"]}
+  festfx_p_38: {options: ["off", "low", "build up", "high"]}
+  festfx_p_39: {options: ["off", "low", "build up", "high"]}
+  festfx_p_40: {options: ["off", "low", "build up", "high"]}

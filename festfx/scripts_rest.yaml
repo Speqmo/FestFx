@@ -1,0 +1,47 @@
+#test - ledfx_live - ledfx_preview - ledfx_scene
+
+
+festfx_test:
+  url: "http://192.168.178.131:8888/api/info"
+  method: get
+
+
+festfx_live:
+  url: "http://192.168.178.131:8888/api/virtuals/groep2/effects"
+  method: post
+  headers:
+    Content-Type: "application/json"
+  payload: >
+    {% set payload_obj = {
+        "type": type,
+        "config": config_data,
+        "active": active
+    } %}
+    {{ payload_obj|tojson }}  
+
+
+festfx_preview:
+  url: "http://192.168.178.131:8888/api/virtuals/preview/effects"
+  method: post
+  headers:
+    Content-Type: "application/json"
+  payload: >
+    {% set payload_obj = {
+      "type": type,
+      "config": config_data,
+      "active": active
+    } %}
+    {{ payload_obj|tojson }}  
+
+
+festfx_scene:
+  url: "http://192.168.178.204:8888/api/scenes"
+  method: put
+  headers:
+    Content-Type: "application/json"
+  payload: >
+    {
+      "id": "{{ scene }}",
+      "action": "activate",
+      "speed": {{ speed }}
+    }
