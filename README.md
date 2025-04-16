@@ -68,7 +68,7 @@ Control LedFX/WLED live like a VJ, designed for touch interface (tablet, mobile)
 2. **Install Services:** <i>'RESTful command', 'MQTT'</i>
 3. Copy the repository files to HA '/config' folder
 4. Change text within the files:
-   - the URL's in '/festfx/scripts_rest.yaml' and '/www/' files ([LedFx API](https://docs.ledfx.app/en/latest/api.html))
+   - The URL's in '/festfx/scripts_rest.yaml' and '/www/' files ([LedFx API](https://docs.ledfx.app/en/latest/api.html))
    - Add the following to your config file:
      ```
      rest_command: !include festfx/scripts_rest.yaml
