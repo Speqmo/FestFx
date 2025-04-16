@@ -1,15 +1,19 @@
 # Negeer alles
 *
 
-# Behoud deze mappen en bestanden
+# Maar volg deze expliciet
 !.gitignore
+!README.md
+
+# Volg mappen én inhoud
 !festfx/
 !festfx/**
 !festfx-dashboard/
 !festfx-dashboard/**
+!themes/
 !themes/festfx-theme/
 !themes/festfx-theme/**
+
+# Volg specifieke bestanden
 !www/FestFx.html
 !www/FestFx_preview.html
-!README.md
-!LICENSE
