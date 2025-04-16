@@ -10,10 +10,8 @@
 !festfx/**
 !festfx-dashboard/
 !festfx-dashboard/**
-!themes/
-!themes/festfx-theme/
-!themes/festfx-theme/**
 
 # Volg specifieke bestanden
 !www/FestFx.html
 !www/FestFx_preview.html
+!themes/festfx/festfx.yaml
