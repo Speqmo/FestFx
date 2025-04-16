@@ -21,7 +21,7 @@ Top
     <li><b>Live effect name</b>
     <li><b>Playlist:</b> Start Auto Mode</li>
     <li><b>Force:</b> Prevent a [touch action] on an effect/Preset (do a [hold action] instead)</li>
-    <li><b>Live effect preview</b>
+    <li><b>Live effect</b>
     <li><b>Tabs:</b> Switch between different modes</li>
   </ul>
 Main
@@ -36,7 +36,7 @@ Top
     <li><b>Sync:</b> Green if the preview/edditing == live </li>
     <li><b>Direct:</b> Changing a parameter is directly actived live mode</li>
     <li><b>Launch:</b> Activate preview settings to live</li>
-    <li><b>Editing effect/preview</b>
+    <li><b>Preview effect</b>
     <li><b>Quick colors:</b> Color presets [touch] activate colors, [hold] save current colors to preset</li>
     <li><b>(Background) Colors:</b> Set colors (low, mid, high, color, color brightness, background, background brightness</li>
   </ul>
