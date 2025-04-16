@@ -16,7 +16,8 @@ Control LedFX/WLED live like a VJ, designed for touch interface (tablet, mobile)
 </tr>
 <tr>
 <td>
-Top
+  
+**Header**
   <ul>
     <li><b>Live effect name</b>
     <li><b>Playlist:</b> Start Auto Mode</li>
@@ -24,12 +25,15 @@ Top
     <li><b>Live effect</b>
     <li><b>Tabs:</b> Switch between different modes</li>
   </ul>
-Main - Effects
+  
+**Main - Effects**
   <ul>
     <li><b>Effects:</b> [touch action] activate live, [hold action] preview/edit the effect</li>
   </ul>
-Main - Presets
+  
+**Main - Presets**
   <ul>
+    li><b>Presets:</b> [touch action] activate live, [hold action] preview/edit the preset</li>
     <li><b>Save:</b> Save mode, save current effect to a preset</li>
     <li><b>Rename:</b> Rename mode, rename a Preset</li>
     <li><b>Playlist:</b> Playlist mode, set a preset to 'verse', 'build-up' or 'chorus' for auto mode</li>
@@ -38,8 +42,9 @@ Main - Presets
     <li><b>Current brightness:</b>  When activating a preset, use the current brightness (in settings) instead of saved brightness</li>
   </ul>
 </td>
-<td>
-Top
+<td valign="top">
+  
+**Header**
   <ul>
     <li><b>Preview effect name</b>
     <li><b>Sync:</b> Green if the preview/edditing == live </li>
@@ -49,7 +54,8 @@ Top
     <li><b>Quick colors:</b> Color presets [touch] activate colors, [hold] save current colors to preset</li>
     <li><b>(Background) Colors:</b> Set colors (low, mid, high, color, color brightness, background, background brightness</li>
   </ul>
-Main
+  
+**Main**
   <ul>
     <li><b>Parameters:</b> Change effect parameters</li>
   </ul>
