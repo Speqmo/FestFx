@@ -2,7 +2,7 @@ views:
   - type: sections
     max_columns: 2
     icon: mdi:led-strip-variant
-    path: ''
+    path: ""
     sections:
       - type: grid
         cards:
@@ -54,13 +54,13 @@ views:
                         } .bubble-sub-button-2 {
                           {% if is_state('input_boolean.festfx_v_settings', 'on') %} background: #008800 !important;
                           {% else %} background: rgba(0,255,0,0.2) !important; {% endif %}
-                        } 
+                        }
               - type: custom:mod-card
                 card:
                   type: horizontal-stack
                   cards:
                     - type: iframe
-                      url: http://192.168.178.129:8123/local/FestFx.html
+                      url: http://192.168.178.129:8123/local/festfx.html
                       aspect_ratio: 2%
                       grid_options:
                         columns: full
@@ -160,7 +160,7 @@ views:
                     grid_options:
                       columns: 12
                       rows: 0.5
-                    icon: ''
+                    icon: ""
                     card_mod:
                       class: festfx-seperator
                   - square: false
@@ -503,7 +503,7 @@ views:
                     grid_options:
                       columns: 12
                       rows: 0.5
-                    icon: ''
+                    icon: ""
                     card_mod:
                       class: festfx-seperator
                   - square: false
@@ -980,7 +980,7 @@ views:
                       rows: 0.5
                     card_mod:
                       class: festfx-seperator
-                    icon: ''
+                    icon: ""
                   - square: false
                     type: grid
                     columns: 4
@@ -1092,7 +1092,7 @@ views:
                       rows: 0.7
                     card_mod:
                       class: festfx-seperator
-                    icon: ''
+                    icon: ""
                   - square: false
                     type: grid
                     columns: 4
@@ -1167,7 +1167,7 @@ views:
                         scrolling_effect: false
                         tap_action:
                           action: toggle
-                        styles: ''
+                        styles: ""
                         card_mod:
                           entity: input_boolean.festfx_s_preset_save
                           class: festfx-preset-settings
@@ -1178,7 +1178,7 @@ views:
                             }
                             .bubble-button-card-container {
                               border-radius: var(--ha-card-border-radius) 0px 0px var(--ha-card-border-radius) !important;
-                            }   
+                            }
                       - type: custom:bubble-card
                         card_type: button
                         entity: input_boolean.festfx_s_name
@@ -1191,7 +1191,7 @@ views:
                         scrolling_effect: false
                         tap_action:
                           action: toggle
-                        styles: ''
+                        styles: ""
                         card_mod:
                           entity: input_boolean.festfx_s_name
                           class: festfx-preset-settings
@@ -1202,7 +1202,7 @@ views:
                             }
                             .bubble-button-card-container {
                               border-radius:0px !important;
-                            }   
+                            }
                       - type: custom:bubble-card
                         card_type: button
                         entity: input_boolean.festfx_s_playlist
@@ -1215,7 +1215,7 @@ views:
                         scrolling_effect: false
                         tap_action:
                           action: toggle
-                        styles: ''
+                        styles: ""
                         card_mod:
                           class: festfx-preset-settings
                           entity: input_boolean.festfx_s_playlist
@@ -1226,7 +1226,7 @@ views:
                             }
                             .bubble-button-card-container {
                              border-radius: 0px var(--ha-card-border-radius) var(--ha-card-border-radius) 0px !important;
-                            }   
+                            }
                       - type: custom:bubble-card
                         card_type: button
                         entity: input_boolean.festfx_s_playlist_show
@@ -1239,7 +1239,7 @@ views:
                         scrolling_effect: false
                         tap_action:
                           action: toggle
-                        styles: ''
+                        styles: ""
                         card_mod:
                           class: festfx-preset-settings
                           entity: input_boolean.festfx_s_playlist_show
@@ -1250,7 +1250,7 @@ views:
                             }
                             .bubble-button-card-container {
                               border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius)  !important;
-                            }   
+                            }
                       - type: custom:bubble-card
                         card_type: button
                         entity: input_boolean.festfx_s_current_colors
@@ -1263,7 +1263,7 @@ views:
                         scrolling_effect: false
                         tap_action:
                           action: toggle
-                        styles: ''
+                        styles: ""
                         card_mod:
                           class: festfx-preset-settings
                           entity: input_boolean.festfx_s_current_colors
@@ -1274,7 +1274,7 @@ views:
                             }
                             .bubble-button-card-container {
                               border-radius: var(--ha-card-border-radius) 0px 0px var(--ha-card-border-radius) !important;
-                            }   
+                            }
                       - type: custom:bubble-card
                         card_type: button
                         entity: input_boolean.festfx_s_current_brightness
@@ -1287,7 +1287,7 @@ views:
                         scrolling_effect: false
                         tap_action:
                           action: toggle
-                        styles: ''
+                        styles: ""
                         card_mod:
                           class: festfx-preset-settings
                           entity: input_boolean.festfx_s_current_brightness
@@ -1298,14 +1298,14 @@ views:
                             }
                                .bubble-button-card-container {
                               border-radius: 0px var(--ha-card-border-radius) var(--ha-card-border-radius) 0px !important;
-                            }   
+                            }
                   - type: custom:bubble-card
                     card_type: separator
                     name: All presets
                     grid_options:
                       columns: 12
                       rows: 0.5
-                    icon: ''
+                    icon: ""
                     card_mod:
                       class: festfx-seperator
                       style: >
@@ -3398,7 +3398,7 @@ views:
                   type: horizontal-stack
                   cards:
                     - type: iframe
-                      url: http://192.168.178.129:8123/local/FestFx_preview.html
+                      url: http://192.168.178.129:8123/local/festfx_preview.html
                       aspect_ratio: 2%
                       grid_options:
                         columns: full
@@ -3622,7 +3622,7 @@ views:
                          .bubble-button-card-container {
                           background: {{ states('input_text.festfx_v_lows') }};
                           border-radius: var(--ha-card-border-radius) 0px 0px var(--ha-card-border-radius) !important;
-                        }   
+                        }
                   - type: custom:bubble-card
                     card_type: button
                     entity: input_text.festfx_v_mids
@@ -3649,7 +3649,7 @@ views:
                           .bubble-button-card-container {
                           background: {{ states('input_text.festfx_v_mids') }};
                           border-radius: 0px  !important;
-                        }    
+                        }
                     icon: mdi:chevron-double-up
                     show_name: true
                     show_state: false
@@ -3685,7 +3685,7 @@ views:
                           .bubble-button-card-container {
                           background: {{ states('input_text.festfx_v_high') }};
                           border-radius: 0px var(--ha-card-border-radius) var(--ha-card-border-radius) 0px !important;
-                        }    
+                        }
                     scrolling_effect: false
               - type: horizontal-stack
                 cards:
@@ -3764,7 +3764,7 @@ views:
                         .bubble-button-card-container {
                           background: {{ states('input_text.festfx_v_background_color') }};
                           border-radius: var(--ha-card-border-radius) 0px 0px var(--ha-card-border-radius) !important;
-                        }    
+                        }
                   - type: custom:bubble-card
                     card_type: button
                     entity: input_number.festfx_v_background_brightness
@@ -3790,7 +3790,7 @@ views:
                     card_type: button
                     button_type: slider
                     entity: input_number.festfx_v_blur
-                    styles: ''
+                    styles: ""
                     icon: mdi:blur-linear
                     show_name: true
                     name: Blur
@@ -3891,7 +3891,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_mode
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -3911,7 +3911,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_mixing_mode
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -3932,7 +3932,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_color_cycler
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -3962,7 +3962,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_mode2
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -3982,7 +3982,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_ease_method
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4003,7 +4003,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_strobe_pattern
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4028,7 +4028,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_strobe_frequency
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4062,7 +4062,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_skip_every
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4083,7 +4083,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_beat_skip
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4104,7 +4104,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_multiplier
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4127,7 +4127,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_sensitivity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4150,7 +4150,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_sensitivity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4173,7 +4173,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_gradient_roll
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4196,7 +4196,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_color_step
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4219,7 +4219,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_beat_decay
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4242,7 +4242,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_strobe_decay
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4265,7 +4265,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_decay
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4288,7 +4288,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_responsiveness
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4311,7 +4311,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_reactivity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4334,7 +4334,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_sway
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4357,7 +4357,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_chop
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4380,7 +4380,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_stretch
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4403,7 +4403,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_intensity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4426,7 +4426,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_color_shift
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4449,7 +4449,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_saturation_threshold
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4472,7 +4472,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_contrast
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4495,7 +4495,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_band_count
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4518,7 +4518,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_gradient_repeat
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4541,7 +4541,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_block_count
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4564,7 +4564,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_fade_rate
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4586,7 +4586,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_frequency_range
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4606,7 +4606,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_align
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4635,7 +4635,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_fix_hues
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4666,7 +4666,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_use_grad
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4697,7 +4697,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_color_intensity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4728,7 +4728,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_bounce
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4751,7 +4751,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_pulse_strip
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4772,7 +4772,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_raindrop_animation
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4793,7 +4793,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_bass_decay_rate
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4816,7 +4816,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_sparks_decay_rate
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4839,7 +4839,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_lows_sensitivity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4862,7 +4862,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_mids_sensitivity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4885,7 +4885,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_high_sensitivity
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4908,7 +4908,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_scan_width
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4931,7 +4931,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_speed
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4954,7 +4954,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_threshold
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -4977,7 +4977,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_rgb_mix
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -5007,7 +5007,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_flip_gradient
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -5031,7 +5031,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_color_scan
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -5138,7 +5138,7 @@ views:
                         conditions:
                           - condition: state
                             entity: input_boolean.festfx_b_sparks_color
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: input_text.festfx_v_effect
                             state: all
@@ -5242,7 +5242,7 @@ views:
                 columns: 2
           - type: custom:bubble-card
             card_type: pop-up
-            hash: '#color'
+            hash: "#color"
             name: Test
             show_header: true
             close_on_click: true
@@ -5258,4 +5258,4 @@ views:
     cards: []
 card_mod:
   style: |
-    .bubble-icon {color: rgb(150, 150, 150) !important;opacity: 1 !important;} 
+    .bubble-icon {color: rgb(150, 150, 150) !important;opacity: 1 !important;}
