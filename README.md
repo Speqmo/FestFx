@@ -24,9 +24,18 @@ Top
     <li><b>Live effect</b>
     <li><b>Tabs:</b> Switch between different modes</li>
   </ul>
-Main
+Main - Effects
   <ul>
-    <li><b>Effects/Presets:</b> [touch action] activate live, [hold action] preview/edit the effect/Preset</li>
+    <li><b>Effects:</b> [touch action] activate live, [hold action] preview/edit the effect</li>
+  </ul>
+Main - Presets
+  <ul>
+    <li><b>Save:</b> Save mode, save current effect to a preset</li>
+    <li><b>Rename:</b> Rename mode, rename a Preset</li>
+    <li><b>Playlist:</b> Playlist mode, set a preset to 'verse', 'build-up' or 'chorus' for auto mode</li>
+    <li><b>Waves:</b> Waves mode, always show playlist type</li>
+    <li><b>Current colors:</b> When activating a preset, use the current color (in settings) instead of saved color</li>
+    <li><b>Current brightness:</b>  When activating a preset, use the current brightness (in settings) instead of saved brightness</li>
   </ul>
 </td>
 <td>
