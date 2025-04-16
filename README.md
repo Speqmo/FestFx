@@ -11,7 +11,7 @@ Control LedFX/WLED live like a VJ, designed for touch interface (tablet, mobile)
   Live lights
 </th>
 <th align="center">
-    Settings
+    Preview lights (settings)
 </th>
 </tr>
 <tr>
