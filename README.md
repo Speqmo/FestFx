@@ -33,7 +33,7 @@ Control LedFX/WLED live like a VJ, designed for touch interface (tablet, mobile)
   
 **Main - Presets**
   <ul>
-    li><b>Presets:</b> [touch action] activate live, [hold action] preview/edit the preset</li>
+    <li><b>Presets:</b> [touch action] activate live, [hold action] preview/edit the preset</li>
     <li><b>Save:</b> Save mode, save current effect to a preset</li>
     <li><b>Rename:</b> Rename mode, rename a Preset</li>
     <li><b>Playlist:</b> Playlist mode, set a preset to 'verse', 'build-up' or 'chorus' for auto mode</li>
