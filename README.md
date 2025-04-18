@@ -1,9 +1,31 @@
-<h1 align="center">FestFx (HASSIO VJ Controller)</h1>
-<p align="center"><br /><img src="https://github.com/user-attachments/assets/aba70cd4-4a07-4a9f-8d81-09e8df8016a0/" width="620"></p>
+<h1 align="center">FestFx (VJ Controller)</h1>
 
-## Features
+<h2>Become a VJ - (or let the computer take over)</h2> 
 
-Control LedFX/WLED live like a VJ, designed for touch interface (tablet, mobile). Preview/edit effects before activating them live. <i>UI: red (slider), green (toggle), blue (select).</i>
+<table style="border: none; border-collapse: collapse;">
+  <tr>
+    <td valign="top" width="900">
+     <p> With <a src="https://github.com/Speqmo/FestFx">FestFx</a>, you can control LED strips and lights live, like a VJ - something LedFx isn’t really suited for. FestFx is designed to act as a bridge between <a src="https://github.com/LedFx/LedFx">LedFx</a> and countless integrations, enabling greater control over things like: presets (e.g. choosing your own color instead of using the one stored in the preset), more advanced auto play modes (playing effects based on music segments like verse, build-up, and chorus), and other extended functionalities. 
+
+The aim is to develop an advanced, VJ-worthy interface that can be controlled by anyone and supports both manual and (semi-)automatic control. The interface is designed for tablets but can also be used via smartphones, Zigbee controllers, MIDI controllers, and more.</p>
+    </td>
+    <td width="900" valign="top">
+      <p align="center"><img src="https://github.com/user-attachments/assets/aba70cd4-4a07-4a9f-8d81-09e8df8016a0/"></p>
+    </td>
+  </tr>
+</table>
+
+## What you need
+
+LedFx was developed for Home Assistant because it’s a stable system that allows fast development and offers countless built-in options to connect different systems. This enables endless functionality — for example, automatically changing light colors based on the album art of the current track. All you need to use FestFx is Home Assistant and LedFx.
+
+- [Home Assistant](https://www.home-assistant.io/installation/) can be easily installed on a wide range of devices: Home Assistant’s own hardware, Raspberry Pi, macOS, Windows, ODROID, Generic x86-64, Linux, and more.
+
+- [LedFx](https://github.com/LedFx) is an awesome piece of software that actually controls the lights - synced to the music! - and is just as easily installed on a computer or Raspberry Pi.
+
+
+## Manual
+Below you can find an image of the interface and explanations of some controls. The current version is stable and serves as a concept to explore the feasibility of our plans. In the short term, the interface will be improved and new features will be added. The colors indicate the type of control: red (slider), green (toggle), blue (select).
 
 <table>
 <tr>
