@@ -1,19 +1,10 @@
-<h1 align="center">FestFx (VJ Controller)</h1>
-
+<h1 align="center">FestFx VJ Controller</h1>
+<p align="center"><a href="https://drive.google.com/file/d/1rfztbmAcchIlFwV3GrhHJQY5YvWO3wKC"><img width="200" src="https://github.com/user-attachments/assets/aba70cd4-4a07-4a9f-8d81-09e8df8016a0/"></a></p>
 <h2>Become a VJ - (or let the computer take over)</h2> 
 
-<table style="border: none; border-collapse: collapse;">
-  <tr>
-    <td valign="top" width="900">
-     <p> With <a src="https://github.com/Speqmo/FestFx">FestFx</a>, you can control LED strips and lights live, like a VJ - something LedFx isn’t really suited for. FestFx is designed to act as a bridge between <a src="https://github.com/LedFx/LedFx">LedFx</a> and countless integrations, enabling greater control over things like: presets (e.g. choosing your own color instead of using the one stored in the preset), more advanced auto play modes (playing effects based on music segments like verse, build-up, and chorus), and other extended functionalities. 
+With <a src="https://github.com/Speqmo/FestFx">FestFx</a>, you can control LED strips and lights live, like a VJ - something LedFx isn’t really suited for. FestFx is designed to act as a bridge between <a src="https://github.com/LedFx/LedFx">LedFx</a> and countless integrations, enabling greater control over things like: presets (e.g. choosing your own color instead of using the one stored in the preset), more advanced auto play modes (playing effects based on music segments like verse, build-up, and chorus), and other extended functionalities. 
 
 The aim is to develop an advanced, VJ-worthy interface that can be controlled by anyone and supports both manual and (semi-)automatic control. The interface is designed for tablets but can also be used via smartphones, Zigbee controllers, MIDI controllers, and more.</p>
-    </td>
-    <td width="900" valign="top">
-      <p align="center"><img src="https://github.com/user-attachments/assets/aba70cd4-4a07-4a9f-8d81-09e8df8016a0/"></p>
-    </td>
-  </tr>
-</table>
 
 ## What you need
 
