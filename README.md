@@ -2,13 +2,13 @@
 <p align="center"><a href="https://drive.google.com/file/d/1rfztbmAcchIlFwV3GrhHJQY5YvWO3wKC"><img width="200" src="https://github.com/user-attachments/assets/aba70cd4-4a07-4a9f-8d81-09e8df8016a0/"></a></p>
 <h2>Become a VJ - (or let the computer take over)</h2> 
 
-With <a src="https://github.com/Speqmo/FestFx">FestFx</a>, you can control LED strips and lights live, like a VJ - something LedFx isn’t really suited for. FestFx is designed to act as a bridge between <a src="https://github.com/LedFx/LedFx">LedFx</a> and countless integrations, enabling greater control over things like: presets (e.g. choosing your own color instead of using the one stored in the preset), more advanced auto play modes (playing effects based on music segments like verse, build-up, and chorus), and other extended functionalities. 
+With <a href="https://github.com/Speqmo/FestFx">FestFx</a>, you can control LED strips and lights live, like a VJ - something LedFx isn’t really suited for. FestFx is designed to act as a bridge between <a src="https://github.com/LedFx/LedFx">LedFx</a> and countless integrations, enabling greater control over things like: presets (e.g. choosing your own color instead of using the one stored in the preset), more advanced auto play modes (playing effects based on music segments like verse, build-up, and chorus), and other extended functionalities. 
 
 The aim is to develop an advanced, VJ-worthy interface that can be controlled by anyone and supports both manual and (semi-)automatic control. The interface is designed for tablets but can also be used via smartphones, Zigbee controllers, MIDI controllers, and more.</p>
 
 ## What you need
 
-LedFx was developed for Home Assistant because it’s a stable system that allows fast development and offers countless built-in options to connect different systems. This enables endless functionality — for example, automatically changing light colors based on the album art of the current track. All you need to use FestFx is Home Assistant and LedFx.
+FestFx was developed for Home Assistant because it’s a stable system that allows fast development and offers countless built-in options to connect different systems. This enables endless functionality — for example, automatically changing light colors based on the album art of the current track. All you need to use FestFx is Home Assistant and LedFx.
 
 - [Home Assistant](https://www.home-assistant.io/installation/) can be easily installed on a wide range of devices: Home Assistant’s own hardware, Raspberry Pi, macOS, Windows, ODROID, Generic x86-64, Linux, and more.
 
